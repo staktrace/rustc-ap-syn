@@ -261,12 +261,12 @@
             allow(const_static_lifetime, doc_markdown, large_enum_variant, match_bool,
                   redundant_closure, needless_pass_by_value))]
 
-extern crate proc_macro2;
-extern crate proc_macro;
+extern crate standalone_proc_macro2 as proc_macro2;
+extern crate rustc_ap_proc_macro as proc_macro;
 extern crate unicode_xid;
 
 #[cfg(feature = "printing")]
-extern crate quote;
+extern crate standalone_quote as quote;
 
 #[cfg(feature = "parsing")]
 #[macro_use]

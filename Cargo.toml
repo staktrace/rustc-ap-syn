@@ -1,12 +1,10 @@
 [package]
-name = "syn"
+name = "standalone-syn"
 version = "0.12.10" # don't forget to update html_root_url
 authors = ["David Tolnay <dtolnay@gmail.com>"]
 license = "MIT/Apache-2.0"
-description = "Nom parser for Rust source code"
-repository = "https://github.com/dtolnay/syn"
-documentation = "https://docs.rs/syn"
-categories = ["development-tools::procedural-macro-helpers"]
+description = "Fork of syn that uses rustc-ap-proc_macro and standalone-* so as to remove the rustc dylib dependency"
+repository = "https://github.com/staktrace/standalone-syn"
 include = ["/Cargo.toml", "/src/**/*.rs", "/README.md", "/LICENSE-APACHE", "/LICENSE-MIT"]
 
 [[example]]
@@ -19,7 +17,7 @@ default = ["derive", "parsing", "printing", "clone-impls"]
 derive = []
 full = []
 parsing = []
-printing = ["quote"]
+printing = ["standalone-quote"]
 visit = []
 visit-mut = []
 fold = []
@@ -27,8 +25,9 @@ clone-impls = []
 extra-traits = []
 
 [dependencies]
-quote = { version = "0.4", optional = true }
-proc-macro2 = "0.2"
+standalone-quote = { version = "0.4.2", optional = true }
+rustc-ap-proc_macro = "40.0.0"
+standalone-proc-macro2 = "0.2.2"
 unicode-xid = "0.1"
 
 [dev-dependencies]
