@@ -267,7 +267,7 @@ extern crate proc_macro;
 extern crate unicode_xid;
 
 #[cfg(feature = "printing")]
-extern crate quote;
+extern crate standalone_quote as quote;
 
 #[cfg(feature = "parsing")]
 #[macro_use]
